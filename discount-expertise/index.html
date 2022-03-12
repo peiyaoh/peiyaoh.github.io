@@ -14,12 +14,14 @@ Date: 2013 ~ 2014
 <hr />
 <h2 class="is-size-4 is-size-5-mobile">Research & Design Strategy</h2>
 <br />
+<h3 class="is-size-5 is-size-6-mobile">Use Semi-structured Interviews and Questionnaire to Understand Programmers' Levels of Experience</h3>
 <p>
 I am a developer myself and also had experience teaching programming courses to adults and graduate students. I am aware how important it is for a developer to know how to find and consult online resources in the process of learning programming or developing applications. As a teacher, one of the very first resources I introduce to my student in the process of learning a new programming language is the API (Application Programmable Interface) document, usually provided by the official website for the programming language (e.g., Python). As a developer myself, I find useful resources online in different formats: blogs, forums, and Q&A communities. These experiences of mine suggest there could be signals of expertise contained in a programmer's browsing history.
 </p>
 <p>
 My approach to investigate whether browsing history reflects a developer's level of expertise was first to gather evidence of whether developers with different level of expertise will use or look for different types of programming resources. To collect such evidence, I recruited university students who were taking their first programming courses, university students who had prior programming training and project experience, and professional developers from local programming meetup. Each participant was asked to fill out a questionnaire to document their programming experience and training. The data was used by the research team estimate their levels of expertise as the ground truth for evaluating machine estimation results.
 </p>
+<h3 class="is-size-5 is-size-6-mobile">Develop a Browsing History Tools for Data Collection and Apply Critical Incident Analysis through Log Reflection to Understand Programemrs' Information Seeking Behaviors</h3>
 <p>
 During the study period, I invited each developer to come into the lab and describe their recent experience (e.g., in the past two days) of doing programming tasks and consult online programming resources accordingly. To support participants during deliberation, I developed a browsing history tool using Adobe Flex that allowed users to extract browsing history from Google Chrome and Mozilla Firefox. The tool allowed participants to display, search, filter, and hide browsing history before uploading their history for analysis.
 </p>
@@ -37,6 +39,7 @@ During the study period, I invited each developer to come into the lab and descr
 <p>
 During in-person meetings, I invited the participant to open the browsing history tool and review the programming resources they visited recently, including how they got to different online programming resources (e.g., direct link or through search engine, which can be distinguished based on whether keywords have been used for searching prior to a page visit). At the end of each week, participants were asked to review and upload their browsing history. Through interviews, I gathered qualitative evidence regarding different occasions when developers would access programming resources. Such observations provide some initial evidence of why developers with varying levels of expertise might visit various resources. For instance, novices might visit API documents by following suggestions from their instructors, while experts might consult Q&As on StackOverflow when they were trying to solve rare and difficult problems.
 </p>
+<h3 class="is-size-5 is-size-6-mobile">Train Classifiers of Programming Resources' Types to Characterize Programmer's Browsing History as an Indicators of their Levels of Experience</h3>
 <p>
 After obtaining initial evidence, I used programming resource types, namely page types, proposed by prior work and then extracted examples from data (i.e., browsing history) we collected. I manually reviewed and labeled 250 records per page type as training data. I calculated term-frequency and inverse document frequency for each webpage as features and used Linear Support Vector Classification to generate a binary classifier for each page type. The binary classifiers were used to label the rest of the browsing history. With all records labeled with page types, I used the percentage of different page categories as features and used logistic regression to investigate the relationships between these features and a developer's level of expertise.
 </p>
